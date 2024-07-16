@@ -23,9 +23,7 @@ function App() {
       console.log('closed');
     },
     onMessage: (message) => {
-      // Convert json into a DataVector object
       const data = JSON.parse(message.data);
-      
       const dataVector = new DataVector(data[Object.keys(data)[0]].mac, data[Object.keys(data)[0]].t, data[Object.keys(data)[0]].ax, data[Object.keys(data)[0]].ay, data[Object.keys(data)[0]].az, data[Object.keys(data)[0]].gx, data[Object.keys(data)[0]].gy, data[Object.keys(data)[0]].gz);
       
       setData(dataVector);
