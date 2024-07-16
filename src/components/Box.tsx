@@ -1,9 +1,9 @@
 import { Box, Edges } from "@react-three/drei";
 import { useEffect, useRef } from 'react';
 
-import { DataVector } from "./lib/DataVector/DataVector";
+import { DataVector } from "../lib/DataVector/DataVector";
 import { Mesh } from 'three';
-import { useEngine } from "./store";
+import { useEngine } from "../store";
 import { useFrame } from '@react-three/fiber';
 
 function MovingBox({ data }: { data: DataVector | undefined }) {

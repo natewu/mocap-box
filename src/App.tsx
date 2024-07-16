@@ -3,13 +3,12 @@ import './App.css';
 import { Button } from "@mui/joy";
 import { Canvas } from "@react-three/fiber";
 import { DataVector } from "./lib/DataVector/DataVector";
-import { Engine } from "./lib/Engine/engine";
-import MovingBox from "./Box";
+import MovingBox from "./components/Box";
 import { useEngine } from "./store";
 import { useState } from "react";
 import useWebSocket from 'react-use-websocket';
 
-const WS_URL = "ws://localhost:8765/clinic"
+const WS_URL = process.env.REACT_APP_WS_URL || 'ws://localhost:8765';
 
 function App() {
   const engine = useEngine((state) => state.engine);

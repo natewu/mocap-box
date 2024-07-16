@@ -13,7 +13,6 @@ export class Engine {
     this.lastUpdateTime = performance.now();
     this.sensitivityX = sensitivityX;
     this.sensitivityY = sensitivityY;
-    // console.log(`Engine initialized at time: ${this.lastUpdateTime}`);
   }
 
   public updateData(data: DataVector | undefined) {
@@ -23,7 +22,6 @@ export class Engine {
   public resetPosition() {
     this.rotationX = 0;
     this.rotationY = 0;
-    // console.log("Position reset to 0, 0");
   }
 
   public calculateRotation(currentTime: number) {
@@ -39,8 +37,6 @@ export class Engine {
     // Accumulate rotation based on gyroscope data
     this.rotationX += gx * deltaTime * this.sensitivityX;
     this.rotationY += gy * deltaTime * this.sensitivityY;
-
-    // console.log(`RotationX: ${this.rotationX}, RotationY: ${this.rotationY}, DeltaTime: ${deltaTime}`);
 
     return { rotationX: this.rotationX, rotationY: this.rotationY };
   }
