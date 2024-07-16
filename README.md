@@ -9,7 +9,7 @@
           "ay": accelerometer y,
           "az": accelerometer z,
           "gx": gyro x,
-          "gy": gyro y
+          "gy": gyro y,
           "gz": gyro z
       }
    }
