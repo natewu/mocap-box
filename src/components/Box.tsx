@@ -6,7 +6,12 @@ import { Mesh } from 'three';
 import { useEngine } from "../store";
 import { useFrame } from '@react-three/fiber';
 
-function MovingBox({ data }: { data: DataVector | undefined }) {
+type Props = {
+  data: DataVector | undefined;
+  color: string | 'orange';
+} & React.ComponentProps<'mesh'>;
+
+function MovingBox({ data, color, ...props }: Props) {
   const boxRef = useRef<Mesh>(null);
   const engine = useEngine((state) => state.engine);
 
@@ -30,10 +35,10 @@ function MovingBox({ data }: { data: DataVector | undefined }) {
   });
 
   return (
-    <mesh ref={boxRef}>
+    <mesh ref={boxRef} {...props}>
       <Box args={[2, 2, 2]}>
         <Edges color="black" />
-        <meshStandardMaterial color="orange" />
+        <meshStandardMaterial color={color} />
       </Box>
     </mesh>
   );
