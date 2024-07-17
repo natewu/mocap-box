@@ -37,7 +37,7 @@ function MovingBox({ data, color, ...props }: Props) {
   return (
     <mesh ref={boxRef} {...props}>
       <Box args={[2, 2, 2]}>
-        <Edges color="black" />
+        {/* <Edges color="black" /> */}
         <meshStandardMaterial color={color} />
       </Box>
     </mesh>

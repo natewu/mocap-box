@@ -63,6 +63,7 @@ function App() {
         <OrbitControls ref={orbitRef} />
         <axesHelper />
         <ambientLight />
+        <directionalLight position={[-1, 2, 4]} />
         <pointLight position={[10, 10, 10]} />
         <MovingBox data={data} {...BoxControls} />
       </Canvas>
