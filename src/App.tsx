@@ -1,12 +1,12 @@
 import './App.css';
 
+import { Environment, OrbitControls } from "@react-three/drei";
 import { Leva, button, useControls } from 'leva'
 import { useMemo, useRef, useState } from "react";
 
 import { Canvas } from "@react-three/fiber";
 import { DataVector } from "./lib/DataVector/DataVector";
 import MovingBox from "./components/Box";
-import { OrbitControls } from "@react-three/drei";
 import { useEngine } from "./store";
 import useWebSocket from 'react-use-websocket';
 
@@ -59,10 +59,11 @@ function App() {
 
   return (
     <div className="App">
-      <Canvas camera={{ position: [0, 0, 3] }}>
+      <Canvas camera={{ position: [-10, 5, -10] }}>
+        <Environment preset="warehouse" background backgroundBlurriness={1} />
         <OrbitControls ref={orbitRef} />
         <axesHelper />
-        <ambientLight />
+        {/* <ambientLight /> */}
         <directionalLight position={[-1, 2, 4]} />
         <pointLight position={[10, 10, 10]} />
         <MovingBox data={data} {...BoxControls} />
